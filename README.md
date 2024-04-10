@@ -42,3 +42,39 @@ eager_WeakRef__memo_ x 56,684 ops/sec ±40.38% (64 runs sampled)
 lazy_WeakRef__memo_ x 22,026 ops/sec ±91.35% (29 runs sampled)
 Fastest is WeakRef
 ```
+
+## deno panic
+
+```
+deno run ./index.js
+✅ Granted read access to "/home/brian/work/btakita/node_modules".
+✅ Granted read access to "/home/brian/work/node_modules".
+✅ Granted all read access.
+fake_WeakRef__memo_ x 880,255 ops/sec ±4.38% (62 runs sampled)
+
+<--- Last few GCs --->
+
+[1065993:0x64f2d4ab4000]    15201 ms: Mark-Compact (reduce) 1398.7 (1424.2) -> 1398.5 (1424.7) MB, pooled: 0 MB, 159.15 / 0.00 ms  (+ 5.5 ms in 0 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 179 ms) (average mu = 0.60[1065993:0x64f2d4ab4000]    15645 ms: Mark-Compact (reduce) 1399.6 (1424.7) -> 1399.3 (1425.5) MB, pooled: 0 MB, 389.50 / 0.00 ms  (+ 0.6 ms in 0 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 393 ms) (average mu = 0.35
+
+<--- JS stacktrace --->
+
+
+
+#
+# Fatal JavaScript out of memory: Reached heap limit
+#
+==== C stack trace ===============================
+
+    deno(+0x29de688) [0x64f2cf829688]
+    deno(+0x201448d) [0x64f2cee5f48d]
+    deno(+0x201144d) [0x64f2cee5c44d]
+    deno(+0x204a479) [0x64f2cee95479]
+    deno(+0x216581c) [0x64f2cefb081c]
+    deno(+0x21634e5) [0x64f2cefae4e5]
+    deno(+0x2156f4c) [0x64f2cefa1f4c]
+    deno(+0x2157868) [0x64f2cefa2868]
+    deno(+0x213ad72) [0x64f2cef85d72]
+    deno(+0x2b69031) [0x64f2cf9b4031]
+    deno(+0x28a0c36) [0x64f2cf6ebc36]
+[1]    1065993 trace trap (core dumped)  deno run ./index.js
+```
