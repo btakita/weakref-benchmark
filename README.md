@@ -1,13 +1,13 @@
 # weakref-benchmark
 Demonstrates WeakRef performance issues with nodejs
 
+## Install
+
 ```sh
 npm i
-bun index.js
-node index.js
 ```
 
-## index.js
+## run index.js
 ```
 bun index.js
 fake_WeakRef__memo_ x 759,429 ops/sec ±1.82% (88 runs sampled)
@@ -24,7 +24,7 @@ lazy_WeakRef__memo_ x 23,938 ops/sec ±98.68% (28 runs sampled)
 Fastest is fake_WeakRef__memo_
 ```
 
-## prime_WeakRef.js
+## run prime_WeakRef.js
 ```
 bun prime_WeakRef.js
 WeakRef x 50,363,731 ops/sec ±5.99% (67 runs sampled)
