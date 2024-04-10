@@ -81,29 +81,32 @@ fake_WeakRef__memo_ x 880,255 ops/sec ±4.38% (62 runs sampled)
 
 ## WeakValueMap.js
 
-Each benchmark includes 1000 set ops.
+Each benchmark includes 1000 set & 1000 get ops.
 
 ```
 bun ./WeakValueMap.js
-WeakMap x 34,003 ops/sec ±0.79% (98 runs sampled)
-FinalizationRegistry x 22,571 ops/sec ±1.19% (96 runs sampled)
-WeakValueMap x 7,590 ops/sec ±1.87% (88 runs sampled)
-Fastest is WeakMap
+WeakMap x 33,849 ops/sec ±0.82% (95 runs sampled)
+FinalizationRegistry x 21,919 ops/sec ±1.63% (93 runs sampled)
+WeakRef x 68,214 ops/sec ±1.98% (91 runs sampled)
+WeakValueMap x 7,224 ops/sec ±1.75% (86 runs sampled)
+Fastest is WeakRef
 ```
 
 ```
 node ./WeakValueMap.js
-WeakMap x 22,403 ops/sec ±0.59% (96 runs sampled)
-FinalizationRegistry x 14,111 ops/sec ±2.73% (88 runs sampled)
-WeakValueMap x 1,213 ops/sec ±9.51% (42 runs sampled)
+WeakMap x 20,373 ops/sec ±0.44% (96 runs sampled)
+FinalizationRegistry x 13,921 ops/sec ±1.63% (88 runs sampled)
+WeakRef x 1,517 ops/sec ±17.78% (19 runs sampled)
+WeakValueMap x 722 ops/sec ±15.36% (81 runs sampled)
 Fastest is WeakMap
 ```
 
 ```
 deno run ./WeakValueMap.js
 ✅ Granted all read access.
-WeakMap x 20,616 ops/sec ±0.90% (68 runs sampled)
-FinalizationRegistry x 13,447 ops/sec ±2.73% (62 runs sampled)
-WeakValueMap x 1,125 ops/sec ±29.22% (9 runs sampled)
+WeakMap x 18,898 ops/sec ±0.52% (69 runs sampled)
+FinalizationRegistry x 12,827 ops/sec ±2.11% (62 runs sampled)
+WeakRef x 1,454 ops/sec ±21.63% (11 runs sampled)
+WeakValueMap x 651 ops/sec ±14.85% (47 runs sampled)
 Fastest is WeakMap
 ```

@@ -9,7 +9,9 @@ function suite__run() {
 		.add('WeakMap', ()=>{
 			const wm = new WeakMap()
 			for (let i = 0; i < 1000; i++) {
-				wm.set({}, i)
+				const o = {}
+				wm.set(o, i)
+				wm.get(o)
 			}
 		})
 		.add('FinalizationRegistry', ()=>{
@@ -18,15 +20,24 @@ function suite__run() {
 				m.delete(key)
 			})
 			for (let i = 0; i < 1000; i++) {
-				let o = {}
+				const o = {}
 				m.set(i, o)
 				r.register(o, i)
+				m.get(i)
+			}
+		})
+		.add('WeakRef', ()=>{
+			for (let i = 0; i < 1000; i++) {
+				const o = {}
+				const wr = new WeakRef(o)
+				wr.deref()
 			}
 		})
 		.add('WeakValueMap', ()=>{
 			const wvm = new WeakValueMap()
 			for (let i = 0; i < 1000; i++) {
 				wvm.set(i, {})
+				wvm.get(i)
 			}
 		})
 		.on('cycle', event=>{
