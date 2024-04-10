@@ -19,10 +19,11 @@ function suite__run() {
 			const r = new FinalizationRegistry(key=>{
 				m.delete(key)
 			})
+			const surrogate_o = {}
 			for (let i = 0; i < 1000; i++) {
 				const o = {}
 				m.set(i, o)
-				r.register(o, i)
+				r.register(surrogate_o, i)
 				m.get(i)
 			}
 		})
