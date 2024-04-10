@@ -1,0 +1,25 @@
+{
+	"name": "@btakita/weakref-benchmark",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"keywords": [
+	],
+	"homepage": "https://github.com/btakita/weakref-benchmark",
+	"bugs": {
+		"url": "https://github.com/btakita/weakref-benchmark/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/btakita/weakref-benchmark.git"
+	},
+	"license": "Apache-2.0",
+	"author": {
+		"name": "Brian Takita",
+		"url": "https://briantakita.me",
+		"email": "info+weakref-benchmark@briantakita.me"
+	},
+	"dependencies": {
+		"benchmark": "^2.1.4"
+	}
+}
