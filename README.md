@@ -78,3 +78,32 @@ fake_WeakRef__memo_ x 880,255 ops/sec ±4.38% (62 runs sampled)
     deno(+0x28a0c36) [0x64f2cf6ebc36]
 [1]    1065993 trace trap (core dumped)  deno run ./index.js
 ```
+
+## WeakValueMap.js
+
+Each benchmark includes 1000 set ops.
+
+```
+bun ./WeakValueMap.js
+WeakMap x 34,003 ops/sec ±0.79% (98 runs sampled)
+FinalizationRegistry x 22,571 ops/sec ±1.19% (96 runs sampled)
+WeakValueMap x 7,590 ops/sec ±1.87% (88 runs sampled)
+Fastest is WeakMap
+```
+
+```
+node ./WeakValueMap.js
+WeakMap x 22,403 ops/sec ±0.59% (96 runs sampled)
+FinalizationRegistry x 14,111 ops/sec ±2.73% (88 runs sampled)
+WeakValueMap x 1,213 ops/sec ±9.51% (42 runs sampled)
+Fastest is WeakMap
+```
+
+```
+deno run ./WeakValueMap.js
+✅ Granted all read access.
+WeakMap x 20,616 ops/sec ±0.90% (68 runs sampled)
+FinalizationRegistry x 13,447 ops/sec ±2.73% (62 runs sampled)
+WeakValueMap x 1,125 ops/sec ±29.22% (9 runs sampled)
+Fastest is WeakMap
+```
